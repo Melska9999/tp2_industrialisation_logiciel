@@ -108,9 +108,6 @@ Pour ce deuxième point, il suffit de vous rendre dans les paramètres de votre 
 
 Cliquez ensuite sur `Generate token` en bas de la page. Copiez le token généré et notez-le quelque part, vous ne pourrez plus y avoir accès une fois la page quittée. Rendez-vous ensuite sur la page de votre repository et allez sous `Settings > Secrets and variables > Actions`. Créez un nouveau secret en cliquant sur `New repository secret`. Nommez le "PERSONAL_TOKEN" et entrez votre token comme valeur.
 
------------------------------------------------------------------------------------
-Continuer ICI
------------------------------------------------------------------------------------
 Vous pouvez maintenant pousser les changements de votre action avec les commandes git usuelles.
 Le nouveau job va s'executer et vous pourrez retrouver l'image sur la page d'accueil de votre compte GitHub, sous l'onglet `Packages`, comme montre ci-dessous.
 
@@ -178,7 +175,13 @@ Lors de cette deuxième analyse, vous devriez voir de nouveaux indicateurs dans 
 
 **Sur l'onglet `Summary` d'une analyse de code, SonarCloud fournit 4 indicateurs. Quels sont-ils et quelles sont leurs utilités ?**
 
+New issues: comparaison avec un précédent scan.
+Accepted issues: issues qui ne seront pas prise en compte pour le quality gates
+Dupplications: détecte le code qui est duppliqué
+Security Hotsport: met en évidence des possibles failles de sécurités présentes dans le code.
+
 **À quoi sert l'indicateur Quality Gate ?**
+Le Quality Gate est un ensemble de conditions pré-définis qui permettent de décider si un projet est prêt pour être mis en production.
 
 
 ## b)
@@ -250,11 +253,19 @@ Notez que la deuxième ligne indique à SonarCloud d'ignorer certains dossiers/f
 
 Une fois terminé, vous pouvez pousser les modifications sur le repository. L'action GitHub va se lancer, et l'analyse SonarCloud commencera. Vous devriez maintenant avoir accès au coverage. Allez sur l'onglet `Summary` du projet SonarCloud, cliquez sur le bouton `Overall Code` et répondez aux questions suivantes.
 
+-----------------------------------------------------------------------------------
+Continuer ICI
+-----------------------------------------------------------------------------------
+
 **Quelle est la différence entre les sections `New code` et `Overall Code` dans l'onglet Summary ?**
+New code ne concerne que les parties de code qui ont été scanées au dernier scan, alors que overall prend tout en compte.
 
 **Y a-t-il des Code Smells ? Si oui, combien et pour quelle(s) raisons(s) ?**
+Non
 
 **Y a-t-il des Security Hotspots ? Si oui, combien et pour quelle(s) raison(s) ?**
+Oui, il y en a un: Use full commit SHA hash for this dependency.
+Il faut hasher le commit de référence.
 
 ## c)
 
