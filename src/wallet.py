@@ -28,5 +28,8 @@ class Wallet(object):
         """Removes the specified amount of money from the current Wallet object"""
         if self.balance < amount:
             raise InsufficientAmount(f"Not enough available to spend {amount}")
-
         self.balance -= amount
+
+    def get_balance(self):
+        """Return the amount of the balance"""
+        return self.balance
