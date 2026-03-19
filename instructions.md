@@ -56,7 +56,10 @@ Analysez son contenu et répondez aux questions.
 
 **Quelles étapes (steps) sont réalisées par cette action ?**
 
-**Une étape est définie au minimum par 2 éléments, lesquels sont-ils et à quoi servent-ils ?**
+Installation des dépendances,lint et run des testes
+
+**Une étape est définie au minimum par 2 éléments, lesquels sont-ils et à quoi servent-ils ?** 
+Par son nom et la commande a exécutée.
 
 **La première étape contient le mot-clé 'with', a quoi sert-il ?**
 
@@ -105,6 +108,9 @@ Pour ce deuxième point, il suffit de vous rendre dans les paramètres de votre 
 
 Cliquez ensuite sur `Generate token` en bas de la page. Copiez le token généré et notez-le quelque part, vous ne pourrez plus y avoir accès une fois la page quittée. Rendez-vous ensuite sur la page de votre repository et allez sous `Settings > Secrets and variables > Actions`. Créez un nouveau secret en cliquant sur `New repository secret`. Nommez le "PERSONAL_TOKEN" et entrez votre token comme valeur.
 
+-----------------------------------------------------------------------------------
+Continuer ICI
+-----------------------------------------------------------------------------------
 Vous pouvez maintenant pousser les changements de votre action avec les commandes git usuelles.
 Le nouveau job va s'executer et vous pourrez retrouver l'image sur la page d'accueil de votre compte GitHub, sous l'onglet `Packages`, comme montre ci-dessous.
 
